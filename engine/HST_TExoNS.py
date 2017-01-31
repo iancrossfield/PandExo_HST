@@ -521,7 +521,7 @@ def calc_StartWindow(eventType, rms, ptsOrbit, numOrbits, depth, inc, aRs, perio
     m           = batman.TransitModel(params, obsphase2)
     obstr2      = m.light_curve(params) + np.random.normal(0, rms, obsphase2.shape)
     
-    plt.figure(1, figsize=(12,4))
+    plt.figure(None, figsize=(12,4))
     plt.clf()
     plt.subplot(121)
     plt.title('Earliest Start Phase', size=12)
@@ -608,7 +608,7 @@ def plot_PlanSpec(specfile, w_unit, disperser, deptherr, nchan, smooth=None):
         binspec[i]  = np.mean(mspec[ispec])
     binspec    += np.random.normal(0,deptherr,nchan)
     
-    plt.figure(1, figsize=(12,4))
+    plt.figure(None, figsize=(12,4))
     plt.clf()
     plt.plot(mwave, mspec, '-k')
     plt.errorbar(binwave, binspec, deptherr, fmt='bo', ms=8, label='Simulated WASP-43b Spectrum')
